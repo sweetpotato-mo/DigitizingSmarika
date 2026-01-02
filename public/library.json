@@ -1,0 +1,72 @@
+[
+  {
+    "slug": "origins-of-the-hook",
+    "titleEn": "Origins of the Hook",
+    "titleNe": "हुकको उत्पत्ति",
+    "titleNew": "हुक यागे उत्पत्ति",
+    "author": "Dr. Ram Shrestha",
+    "designation": "Cultural Historian",
+    "tags": ["History", "Craftsmanship"],
+    "languageAvailability": ["en", "ne", "new"]
+  },
+  {
+    "slug": "heritage-of-chaku",
+    "titleEn": "Heritage of Chaku",
+    "titleNe": "चाकुको विरासत",
+    "titleNew": "चाकु यागे विरासत",
+    "author": "Prof. Maya Gurung",
+    "designation": "Heritage Researcher",
+    "tags": ["Heritage", "Tradition"],
+    "languageAvailability": ["en", "ne", "new"]
+  },
+  {
+    "slug": "jigu-tokha",
+    "titleEn": "जिगु टोखा",
+    "titleNe": "जिगु टोखा",
+    "titleNew": "जिगु टोखा",
+    "author": "Krishna Tamang",
+    "designation": "Poet",
+    "tags": ["Poem", "Nepal Bhasa"],
+    "languageAvailability": ["ne", "new"]
+  },
+  {
+    "slug": "chemistry-of-aeration",
+    "titleEn": "Chemistry of Aeration",
+    "titleNe": "वायुकरणको रसायन",
+    "titleNew": "",
+    "author": "Dr. Sita Basnet",
+    "designation": "Food Scientist",
+    "tags": ["Science", "Chemistry"],
+    "languageAvailability": ["en", "ne"]
+  },
+  {
+    "slug": "newa-sanskriti",
+    "titleEn": "नेवाः संस्कृति",
+    "titleNe": "नेवाः संस्कृति",
+    "titleNew": "नेवाः संस्कृति",
+    "author": "Prem Shrestha",
+    "designation": "Cultural Anthropologist",
+    "tags": ["Culture", "Nepal Bhasa", "Newar"],
+    "languageAvailability": ["ne", "new"]
+  },
+  {
+    "slug": "dhairya-ta-ko-path",
+    "titleEn": "धैर्यताको पाठ",
+    "titleNe": "धैर्यताको पाठ",
+    "titleNew": "धैर्यताको पाठ",
+    "author": "Laxmi Maharjan",
+    "designation": "Writer",
+    "tags": ["Essay", "Philosophy"],
+    "languageAvailability": ["ne", "new"]
+  },
+  {
+    "slug": "history-of-tokha-chaku",
+    "titleEn": "The History of Tokha Chaku",
+    "titleNe": "टोखा चाकुको इतिहास",
+    "author": "Krishna Bahadur Shrestha",
+    "designation": "Former President of Tokha Chaku Conservation Society & Proprietor of Shree Krishna Chaku Production",
+    "tags": ["History", "Culture", "Heritage"],
+    "languageAvailability": ["ne", "en"]
+  }
+]
+
