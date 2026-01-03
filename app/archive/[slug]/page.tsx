@@ -1,8 +1,8 @@
 import fs from 'fs';
 import path from 'path';
-import ArchiveClient from '@/app/archive/[slug]/ArchiveClient';
+import { Suspense } from 'react'; // Import Suspense
+import ArchiveClient from './ArchiveClient';
 
-// This function runs on the server during the build
 export async function generateStaticParams() {
   const contentDirectory = path.join(process.cwd(), 'public/content');
   
@@ -10,7 +10,6 @@ export async function generateStaticParams() {
 
   const folders = fs.readdirSync(contentDirectory);
 
-  // Filters out the 'editorial' folder if it exists
   return folders
     .filter(folder => folder !== 'editorial')
     .map((folder) => ({
@@ -18,7 +17,11 @@ export async function generateStaticParams() {
     }));
 }
 
-// Pass the slug to the Client component as a prop
 export default function Page({ params }: { params: { slug: string } }) {
-  return <ArchiveClient slug={params.slug} />;
+  return (
+    // Wrap ArchiveClient in Suspense to fix the prerender error
+    <Suspense fallback={<div className="min-h-screen bg-[#F9F7F2] flex items-center justify-center pt-20">Loading Article...</div>}>
+      <ArchiveClient slug={params.slug} />
+    </Suspense>
+  );
 }
