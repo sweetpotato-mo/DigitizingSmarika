@@ -14,7 +14,7 @@ export default function ArchiveClient({ slug }: { slug: string }) {
   const [content, setContent] = useState('')
   const [loading, setLoading] = useState(true)
   const [metadata, setMetadata] = useState<any>(null)
-  const [articles, setArticles] = useState<any[]>([]) // For the TOC at the bottom
+  const [articles, setArticles] = useState<any[]>([])
   const [availableLanguages, setAvailableLanguages] = useState<string[]>([])
   const [loadedLang, setLoadedLang] = useState('')
 
@@ -27,10 +27,9 @@ export default function ArchiveClient({ slug }: { slug: string }) {
         const libRes = await fetch('/library.json')
         const libData = await libRes.json()
         
-        // 1. Setup current article metadata
         const meta = libData.find((a: any) => a.slug === slug)
         setMetadata(meta)
-        setArticles(libData) // 2. Store all articles for the TOC
+        setArticles(libData)
 
         const available = meta?.languageAvailability || ['en']
         setAvailableLanguages(available)
@@ -60,7 +59,6 @@ export default function ArchiveClient({ slug }: { slug: string }) {
   return (
     <div className="min-h-screen bg-[#F9F7F2] pt-24">
       <article className="max-w-[780px] mx-auto px-6 py-12">
-        {/* Article Header */}
         <header className="mb-14 border-b border-stone-200 pb-12">
           <h1 className="font-playfair text-4xl md:text-5xl font-bold text-[#2D2D2D] mb-8 leading-tight">
             {loadedLang === 'ne' ? metadata?.titleNe : metadata?.titleEn}
@@ -68,7 +66,6 @@ export default function ArchiveClient({ slug }: { slug: string }) {
           <p className="font-lora italic text-stone-600 text-lg">By {metadata?.author}</p>
           <p className="text-stone-400 text-sm mt-1 uppercase tracking-wide">{metadata?.designation}</p>
 
-          {/* Newari Invitation */}
           {availableLanguages.includes('new') && loadedLang !== 'new' && (
             <div className="mt-10 p-6 bg-stone-50 border border-stone-200 rounded-lg flex flex-col md:flex-row items-center justify-between gap-6 shadow-sm">
               <div className="text-stone-700 text-sm font-lora">
@@ -82,13 +79,12 @@ export default function ArchiveClient({ slug }: { slug: string }) {
           )}
         </header>
         
-        {/* Article Body */}
         <div className={`markdown-content prose prose-stone max-w-none text-[1.2rem] leading-[2] ${loadedLang === 'new' || loadedLang === 'ne' ? 'font-noto' : 'font-lora'} prose-p:mb-10`}>
           <ReactMarkdown remarkPlugins={[remarkGfm]}>{content}</ReactMarkdown>
         </div>
 
-        {/* --- Table of Contents Footer --- */}
-        <div className="mt-32 pt-20 border-t-2 border-stone-200">
+        {/* --- Table of Contents Footer with ID FIX --- */}
+        <div id="toc" className="mt-32 pt-20 border-t-2 border-stone-200 scroll-mt-32">
           <div className="flex items-center justify-center mb-16">
             <div className="h-[1px] w-12 bg-stone-300" />
             <span className="mx-6 text-stone-500 text-2xl font-black font-playfair tracking-[0.2em] uppercase">
