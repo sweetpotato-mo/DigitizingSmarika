@@ -1,5 +1,5 @@
 # Editorial 
-# The Necessity of Unity for Tokha Chaku
+## The Necessity of Unity for Tokha Chaku
 
 An organization is born out of necessity. It was with the goal of unifying the scattered **Chaku** (molasses taffy) entrepreneurs of Tokha that the **Tokha Chaku Preservation Society** was established. Founded on the advice and wisdom of local intellectuals, this society aims to unify producers to streamline production and sales. We are pleased to announce that this organization was formed with the unanimous support of all local Chaku entrepreneurs.
 

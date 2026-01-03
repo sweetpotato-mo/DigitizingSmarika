@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 import { Lora, Playfair_Display, Noto_Sans_Devanagari } from 'next/font/google'
 import NavBar from '@/components/NavBar'
 import { LanguageProvider } from '@/contexts/LanguageContext'
+import { Suspense } from 'react'
 
 const lora = Lora({
   subsets: ['latin'],
@@ -35,13 +36,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${lora.variable} ${playfair.variable} ${noto.variable}`}>
+      <body className={`${lora.variable} ${playfair.variable} ${noto.variable} bg-[#F9F7F2]`}>
         <LanguageProvider>
-          <NavBar />
+          {/* Wrap NavBar in Suspense to fix build error */}
+          <Suspense fallback={<div className="h-16 w-full bg-white/50 animate-pulse" />}>
+            <NavBar />
+          </Suspense>
           {children}
         </LanguageProvider>
       </body>
     </html>
   )
 }
-
