@@ -12,12 +12,22 @@ export default function NavBar() {
   const tocText = language === 'ne' ? 'लेख सूची' : 'Contents Overview'
   
   const handleTocClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault()
-    const tocElement = document.getElementById('toc')
-    if (tocElement) {
-      tocElement.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    // Check if we are currently at the root/home path
+    const isHomePage = window.location.pathname === '/';
+
+    if (isHomePage) {
+      // If already home, prevent reload and scroll smoothly
+      e.preventDefault();
+      const tocElement = document.getElementById('toc');
+      if (tocElement) {
+        tocElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    } else {
+      // If inside an article, do NOT prevent default.
+      // Do NOT try to scroll here. 
+      // Let the <Link> component take the user to "/#toc"
     }
-  }
+  };
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200/50 shadow-sm">
