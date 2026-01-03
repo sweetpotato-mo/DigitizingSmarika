@@ -1,6 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-import { Suspense } from 'react'; // Import Suspense
+import { Suspense } from 'react';
 import ArchiveClient from './ArchiveClient';
 
 export async function generateStaticParams() {
@@ -19,8 +19,12 @@ export async function generateStaticParams() {
 
 export default function Page({ params }: { params: { slug: string } }) {
   return (
-    // Wrap ArchiveClient in Suspense to fix the prerender error
-    <Suspense fallback={<div className="min-h-screen bg-[#F9F7F2] flex items-center justify-center pt-20">Loading Article...</div>}>
+    // Mandatory Suspense boundary for Next.js Static Site Generation (SSG)
+    <Suspense fallback={
+      <div className="min-h-screen bg-[#F9F7F2] flex items-center justify-center pt-20 font-lora text-stone-400">
+        Loading Article...
+      </div>
+    }>
       <ArchiveClient slug={params.slug} />
     </Suspense>
   );
