@@ -1,0 +1,23 @@
+# "Tu" and the Culture of Tokha Chaku
+
+**Ganeshman Shrestha** | Chairperson, Tokha Cultural Protected Area Development Committee
+
+Throughout various eras, even with devotion in mind, word, and deed, many human and divine plans have remained incomplete. In mythology, it is said that Lord Vishnu envisioned a delicious fruit-bearing version of the sugarcane stalk, yet that vision remains unfulfilled. Consequently, sugarcane is invoked in rituals ranging from Lord Vishnu’s prayers to peace ceremonies and tonsure (*Chuda Karma*) rites.
+
+Sugarcane is a medicinal plant rich in antioxidants, essential for the digestive system. It aids in protecting the body against various infections and is loaded with minerals, earning it a place in Ayurvedic medicine. Sugarcane juice is considered a boon for its preventive role in kidney and liver ailments, jaundice, skin diseases, prostate and breast cancer, and respiratory issues.
+
+Tokha has long been a center of skilled agricultural settlement. Legend has it that in ancient times, when yogis and sages visited seeking alms and peace, the residents donated food with such hospitality that the delighted sages named the place "Lakshmipur," believing it to be the abode of Lakshmi (the goddess of wealth). Historical Newari settlements in the valley often adopted names ending in "Pur," signifying a managed urban town.
+
+Over time, the name evolved. The area was said to be inhabited by a *Khyak* (a mythical spirit) named 'Tukah' who hid in the sugarcane fields. The settlement became 'Tukkhya,' and because it was surrounded by managed 'Tu' (sugarcane) 'Khyo' (fields/open space), the name transformed into 'Tokha.' Today, this has expanded into the historic cultural city and Tokha Municipality. Throughout history, the struggle for survival between species and plants has led to constant research and innovation to protect human existence.
+
+Our ancestors, renowned for their agricultural prowess, initially consumed sugarcane juice for its cooling and nutritional properties during the summer. Later, through refined research and processing, they developed jaggery (*Sakhar*), and from that, an intensely sweet substance known in Nepal Bhasa as **Chaku**. Known for providing warmth and stamina, this energy-boosting delicacy was woven into our festivals and rituals, creating a vibrant cultural legacy in Tokha.
+
+In Newari culture, Chaku is central to *Yomari Punhi* (Post-harvest full moon), where it serves as the filling for *Yomari* dumplings. On the first day of the month of Magh, known as *Ghyo Chaku Sallhu* (Maghe Sankranti), eating ghee and Chaku is mandatory. It remains a staple snack and food during the cold winter months of the Kathmandu Valley. Chaku is also essential in social rituals: for marriage ceremonies (*Lakha*), announcing births, and preparing special dishes for postpartum mothers.
+
+Local folklore is rich with Chaku references, such as the playful song: *"Tokhaya Chaku, Macha Bui Thaku, Macha Bulan Haku, Yomari Maku"* (Tokha’s Chaku is sweet, but raising children is hard; the baby is dark, and the Yomari is tasty). Traditionally, when a daughter-in-law gives birth, the news is sent to her paternal home (*Sa-thhyankegu*) using Chaku as a code: a whole Chaku (*Chhapay*) for a boy and a half Chaku (*Bapay*) for a girl. While modern communication has replaced this in many areas, the cultural memory remains.
+
+The skill of making Chaku is being passed down to the younger generation in Tokha, who are now embracing the profession with enthusiasm. While currently a seasonal winter business, there is a need for research and business planning to blend Chaku into diverse year-round culinary products. The **Tokha Traditional Chaku Preservation Society** was established to prevent unhealthy competition and protect ancestral professional rights.
+
+To honor the hard work of our ancestors and the living history of Tokha, I believe it is essential to construct a **Chaku Monument** and a **Cultural Park** in the heart of the city or nearby public spaces. This landmark would serve as a lasting symbol of our Chaku culture. For this, active participation from the Tokha Municipality, political representatives, entrepreneurs, and cultural activists is required.
+
+We must formulate plans to develop Tokha as a tourist destination by beautifying the traditional arts, skills, and heritage preserved by the blood and sweat of our ancestors. By doing so, we can provide national and international recognition to our culture and uplift the local standard of living. I trust that our scholars, experienced elders, and diligent youth will take on this responsibility with strong leadership.

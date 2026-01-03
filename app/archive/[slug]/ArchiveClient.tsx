@@ -6,124 +6,97 @@ import { useLanguage } from '@/contexts/LanguageContext'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 
-interface ArticleMetadata {
-  slug: string
-  titleEn: string
-  titleNe: string
-  titleNew: string
-  author: string
-  designation: string
-  tags: string[]
-  languageAvailability: string[]
-}
-
 export default function ArchiveClient({ slug }: { slug: string }) {
   const searchParams = useSearchParams()
   const router = useRouter()
   const { language } = useLanguage()
-  const [content, setContent] = useState<string>('')
+  const [content, setContent] = useState('')
   const [loading, setLoading] = useState(true)
-  const [error, setError] = useState<string | null>(null)
+  const [metadata, setMetadata] = useState<any>(null)
   const [availableLanguages, setAvailableLanguages] = useState<string[]>([])
-  const [scrollPosition, setScrollPosition] = useState(0)
-  const [loadedLang, setLoadedLang] = useState<string>('')
-  const [metadata, setMetadata] = useState<ArticleMetadata | null>(null)
-  const contentRef = useRef<HTMLDivElement>(null)
+  const [loadedLang, setLoadedLang] = useState('')
 
-  const articleLang = (searchParams.get('lang') || language) as string
+  const urlLang = searchParams.get('lang')
+  const articleLang = urlLang || language
 
   useEffect(() => {
-    const loadArticle = async () => {
-      setLoading(true)
-      setError(null)
-
+    const fetchData = async () => {
       try {
-        const libResponse = await fetch('/library.json')
-        const libData: ArticleMetadata[] = await libResponse.json()
-        const articleMeta = libData.find((article) => article.slug === slug)
-        
-        if (!articleMeta) throw new Error('Article not found in library')
-        setMetadata(articleMeta)
+        const libRes = await fetch('/library.json')
+        const libData = await libRes.json()
+        const meta = libData.find((a: any) => a.slug === slug)
+        setMetadata(meta)
 
-        const available = articleMeta.languageAvailability || ['en']
+        const available = meta?.languageAvailability || ['en']
         setAvailableLanguages(available)
 
-        let langToLoad = articleLang
-        if (!available.includes(articleLang) && available.length > 0) {
-          langToLoad = available[0]
-        }
-        setLoadedLang(langToLoad)
+        let finalLang = available.includes(articleLang) ? articleLang : 'en'
+        setLoadedLang(finalLang)
 
-        const contentPath = `/content/${slug}/${langToLoad}.md`
-        const response = await fetch(contentPath)
-        
-        if (!response.ok) throw new Error('Markdown file missing')
-
-        const text = await response.text()
+        const res = await fetch(`/content/${slug}/${finalLang}.md`)
+        const text = await res.text()
         setContent(text)
-      } catch (err) {
-        setError('Failed to load article.')
-        console.error(err)
-      } finally {
-        setLoading(false)
-      }
+      } catch (e) { console.error(e) } finally { setLoading(false) }
     }
-
-    if (slug) loadArticle()
+    fetchData()
   }, [slug, articleLang])
 
-  // Get titles based on loaded language
-  const getPrimaryTitle = () => {
-    if (!metadata) return ''
-    if (loadedLang === 'ne') return metadata.titleNe || metadata.titleEn
-    if (loadedLang === 'new') return metadata.titleNew || metadata.titleNe || metadata.titleEn
-    return metadata.titleEn
+  const handleLanguageChange = (newLang: string) => {
+    const params = new URLSearchParams(searchParams.toString())
+    params.set('lang', newLang)
+    router.push(`/archive/${slug}?${params.toString()}`)
   }
 
-  const getAltTitle = () => {
-    if (!metadata) return ''
-    if (loadedLang === 'en') return metadata.titleNe || metadata.titleNew
-    if (loadedLang === 'ne') return metadata.titleEn
-    return metadata.titleEn || metadata.titleNe
-  }
+  const hasNewari = availableLanguages.includes('new') // Fixed ReferenceError
 
-  const getTagColor = (tag: string) => {
-    const colors: Record<string, string> = {
-      Poem: 'bg-pink-100 text-pink-800 border-pink-200',
-      'Nepal Bhasa': 'bg-purple-100 text-purple-800 border-purple-200',
-      History: 'bg-blue-100 text-blue-800 border-blue-200',
-      Craftsmanship: 'bg-amber-100 text-amber-800 border-amber-200',
-      Heritage: 'bg-green-100 text-green-800 border-green-200',
-      Culture: 'bg-rose-100 text-rose-800 border-rose-200',
-    }
-    return colors[tag] || 'bg-stone-100 text-stone-700 border-stone-200'
-  }
-
-  if (loading) return <div className="p-20 text-center">Loading Archive...</div>
-  if (error) return <div className="p-20 text-center text-red-500">{error}</div>
+  if (loading) return <div className="p-20 text-center font-lora">Gathering content...</div>
 
   return (
-    <div className="min-h-screen bg-[#F9F7F2] pt-20">
+    <div className="min-h-screen bg-[#F9F7F2] pt-24">
       <article className="max-w-[750px] mx-auto px-6 py-12">
-        <header className="mb-10 border-b border-stone-200 pb-10">
-          <div className="space-y-3">
-            {getAltTitle() && (
-              <div className="text-sm font-lora tracking-widest text-stone-400 uppercase">
-                {getAltTitle()}
+        <header className="mb-12 border-b border-stone-200 pb-10">
+          <h1 className="font-playfair text-4xl md:text-5xl font-bold text-[#2D2D2D] mb-6 leading-tight">
+            {loadedLang === 'ne' ? metadata?.titleNe : metadata?.titleEn}
+          </h1>
+          <p className="font-lora italic text-stone-500 text-lg">By {metadata?.author}</p>
+          <p className="text-stone-400 text-sm mt-1">{metadata?.designation}</p>
+
+          {/* Newari Invitation */}
+          {hasNewari && loadedLang !== 'new' && (
+            <div className="mt-10 p-6 bg-stone-50 border border-stone-200 rounded-lg flex flex-col md:flex-row items-center justify-between gap-6 shadow-sm">
+              <div className="text-stone-700 text-sm font-lora">
+                <p className="italic mb-1 opacity-75 text-stone-500">यो लेख मूलतः नेपाल भाषामा लेखिएको हो ।</p>
+                <p className="font-bold text-stone-800">Nepal Bhasa version is available for reading.</p>
               </div>
-            )}
-            <h1 className="font-playfair text-4xl md:text-5xl font-bold text-[#2D2D2D]">
-              {getPrimaryTitle()}
-            </h1>
-          </div>
-          <div className="mt-8">
-            <p className="text-stone-800 font-semibold">{metadata?.author}</p>
-            <p className="text-stone-500 text-sm">{metadata?.designation}</p>
-          </div>
+              <button onClick={() => handleLanguageChange('new')} className="bg-[#2D2D2D] text-white px-5 py-2.5 rounded text-[10px] font-black tracking-[0.2em] uppercase hover:bg-black transition-all">
+                (READ ORIGINAL)
+              </button>
+            </div>
+          )}
+
+          {/* Newari Version Buttons */}
+          {loadedLang === 'new' && (
+            <div className="mt-8 flex gap-6">
+              <button onClick={() => handleLanguageChange('en')} className="text-[10px] font-black tracking-widest text-stone-400 hover:text-stone-800 transition-colors uppercase underline underline-offset-8">English Version</button>
+              <button onClick={() => handleLanguageChange('ne')} className="text-[10px] font-black tracking-widest text-stone-400 hover:text-stone-800 transition-colors uppercase underline underline-offset-8">नेपाली संस्करण</button>
+            </div>
+          )}
         </header>
-        <div className="markdown-content prose prose-stone max-w-none text-lg leading-[1.8]">
-          <ReactMarkdown remarkPlugins={[remarkGfm]}>{content}</ReactMarkdown>
-        </div>
+        
+        <div className={`
+  markdown-content 
+  prose prose-stone 
+  max-w-none 
+  text-[1.15rem] 
+  leading-[1.9] 
+  tracking-tight 
+  ${loadedLang === 'new' || loadedLang === 'ne' ? 'font-noto' : 'font-lora'}
+  prose-p:mb-8 
+  prose-headings:mt-12 
+  prose-headings:mb-6
+`}>
+  <ReactMarkdown remarkPlugins={[remarkGfm]}>{content}</ReactMarkdown>
+</div>
       </article>
     </div>
   )

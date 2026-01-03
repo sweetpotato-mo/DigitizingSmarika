@@ -1,64 +1,23 @@
 [
-  {
-    "slug": "origins-of-the-hook",
-    "titleEn": "Origins of the Hook",
-    "titleNe": "हुकको उत्पत्ति",
-    "titleNew": "हुक यागे उत्पत्ति",
-    "author": "Dr. Ram Shrestha",
-    "designation": "Cultural Historian",
-    "tags": ["History", "Craftsmanship"],
-    "languageAvailability": ["en", "ne", "new"]
-  },
-  {
-    "slug": "heritage-of-chaku",
-    "titleEn": "Heritage of Chaku",
-    "titleNe": "चाकुको विरासत",
-    "titleNew": "चाकु यागे विरासत",
-    "author": "Prof. Maya Gurung",
-    "designation": "Heritage Researcher",
-    "tags": ["Heritage", "Tradition"],
-    "languageAvailability": ["en", "ne", "new"]
-  },
-  {
-    "slug": "jigu-tokha",
-    "titleEn": "जिगु टोखा",
-    "titleNe": "जिगु टोखा",
-    "titleNew": "जिगु टोखा",
-    "author": "Krishna Tamang",
-    "designation": "Poet",
-    "tags": ["Poem", "Nepal Bhasa"],
-    "languageAvailability": ["ne", "new"]
-  },
-  {
-    "slug": "chemistry-of-aeration",
-    "titleEn": "Chemistry of Aeration",
-    "titleNe": "वायुकरणको रसायन",
-    "titleNew": "",
-    "author": "Dr. Sita Basnet",
-    "designation": "Food Scientist",
-    "tags": ["Science", "Chemistry"],
-    "languageAvailability": ["en", "ne"]
-  },
-  {
-    "slug": "newa-sanskriti",
-    "titleEn": "नेवाः संस्कृति",
-    "titleNe": "नेवाः संस्कृति",
-    "titleNew": "नेवाः संस्कृति",
-    "author": "Prem Shrestha",
-    "designation": "Cultural Anthropologist",
-    "tags": ["Culture", "Nepal Bhasa", "Newar"],
-    "languageAvailability": ["ne", "new"]
-  },
-  {
-    "slug": "dhairya-ta-ko-path",
-    "titleEn": "धैर्यताको पाठ",
-    "titleNe": "धैर्यताको पाठ",
-    "titleNew": "धैर्यताको पाठ",
-    "author": "Laxmi Maharjan",
-    "designation": "Writer",
-    "tags": ["Essay", "Philosophy"],
-    "languageAvailability": ["ne", "new"]
-  },
+    {
+        "slug": "satya-mohan-joshi",
+        "titleEn": "The Glory of Chaku in Our Culture",
+        "titleNe": "हाम्रो संस्कृतिमा चाकुको महिमा",
+        "author": "Satya Mohan Joshi",
+        "designation": "Centenarian Scholar (Shatabdi Purush) & Chancellor of Nepal Bhasa Academy",
+        "tags": [
+          "Culture",
+          "History",
+          "Heritage",
+          "Newa: Civilization",
+          "Medicine"
+        ],
+        "languageAvailability": [
+          "en",
+          "ne",
+          "new"
+        ]
+      },
   {
     "slug": "history-of-tokha-chaku",
     "titleEn": "The History of Tokha Chaku",
@@ -76,5 +35,77 @@
     "designation": "Editor-in-Chief, TokhaLive.com",
     "tags": ["Legacy","Trade History","Oral History","Culture","Tokha Live"],
     "languageAvailability": ["ne", "en"]
+  },
+  {
+    "slug": "shree-krishna-chaku-production",
+    "titleEn": "Shree Krishna Chaku Production Pvt. Ltd.: Hardships and Journey",
+    "titleNe": "श्री कृष्ण चाकु प्रोडक्सन प्रा. लि.: सङ्घर्ष र यात्रा",
+    "author": "Krishna Bahadur Shrestha",
+    "designation": "Chairperson, Tokha Traditional Chaku Preservation Society & Proprietor, Shree Krishna Chaku Production",
+    "tags": [
+      "Legacy",
+      "Trade History",
+      "Culture",
+      "Craftsmanship",
+      "Heritage"
+    ],
+    "languageAvailability": [
+      "en",
+      "ne"
+    ]
+  },
+  {
+    "slug": "sugarcane-cultivation-history",
+    "titleEn": "Sugarcane Cultivation in This Region: How Many Millennia Ago?",
+    "titleNe": "यहाँको उखुखेती: कति हजार वर्ष परदेखि !",
+    "author": "Prabhat Sapkota",
+    "designation": "Teacher, Shree Saraswoti Secondary School & Litterateur",
+    "tags": [
+      "History",
+      "Oral History",
+      "Culture",
+      "Legacy",
+      "Botanical History"
+    ],
+    "languageAvailability": [
+      "en",
+      "ne"
+    ]
+  },
+  {
+    "slug": "tu-and-tokha-chaku-culture",
+    "titleEn": "\"Tu\" and the Culture of Tokha Chaku",
+    "titleNe": "तु र टोखा चाकु संस्कृति",
+    "author": "Ganeshman Shrestha",
+    "designation": "Chairperson, Tokha Cultural Protected Area Development Committee",
+    "tags": [
+      "Culture",
+      "Heritage",
+      "Oral History",
+      "Tradition",
+      "Mythology"
+    ],
+    "languageAvailability": [
+      "en",
+      "ne"
+    ]
+  },
+  {
+    "slug": "tokha-chaku-heritage-and-process",
+    "titleEn": "Tokha Chaku: Heritage and Process",
+    "titleNe": "टोखा चाकु",
+    "author": "Madan Shrestha",
+    "designation": "Author, Litterateur, and Advocate",
+    "tags": [
+      "History",
+      "Legacy",
+      "Craftsmanship",
+      "Tradition",
+      "Trade History"
+    ],
+    "languageAvailability": [
+      "en",
+      "ne"
+    ]
   }
 ]
