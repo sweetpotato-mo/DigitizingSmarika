@@ -1,8 +1,9 @@
 'use client'
 
-import { useEffect, useState, useRef } from 'react'
+import { useEffect, useState } from 'react'
 import { useSearchParams, useRouter } from 'next/navigation'
 import { useLanguage } from '@/contexts/LanguageContext'
+import Link from 'next/link'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 
@@ -13,6 +14,7 @@ export default function ArchiveClient({ slug }: { slug: string }) {
   const [content, setContent] = useState('')
   const [loading, setLoading] = useState(true)
   const [metadata, setMetadata] = useState<any>(null)
+  const [articles, setArticles] = useState<any[]>([]) // For the TOC at the bottom
   const [availableLanguages, setAvailableLanguages] = useState<string[]>([])
   const [loadedLang, setLoadedLang] = useState('')
 
@@ -24,8 +26,11 @@ export default function ArchiveClient({ slug }: { slug: string }) {
       try {
         const libRes = await fetch('/library.json')
         const libData = await libRes.json()
+        
+        // 1. Setup current article metadata
         const meta = libData.find((a: any) => a.slug === slug)
         setMetadata(meta)
+        setArticles(libData) // 2. Store all articles for the TOC
 
         const available = meta?.languageAvailability || ['en']
         setAvailableLanguages(available)
@@ -47,67 +52,72 @@ export default function ArchiveClient({ slug }: { slug: string }) {
     router.push(`/archive/${slug}?${params.toString()}`)
   }
 
-  const hasNewari = availableLanguages.includes('new')
+  const getTitle = (article: any) => (language === 'ne' ? article.titleNe || article.titleEn : article.titleEn)
+  const getAltTitle = (article: any) => (language === 'ne' ? article.titleEn : article.titleNe || article.titleNew)
 
   if (loading) return <div className="p-20 text-center font-lora">Gathering content...</div>
 
   return (
     <div className="min-h-screen bg-[#F9F7F2] pt-24">
       <article className="max-w-[780px] mx-auto px-6 py-12">
+        {/* Article Header */}
         <header className="mb-14 border-b border-stone-200 pb-12">
-          <h1 className="font-playfair text-4xl md:text-5xl font-bold text-[#2D2D2D] mb-8 leading-[1.2]">
+          <h1 className="font-playfair text-4xl md:text-5xl font-bold text-[#2D2D2D] mb-8 leading-tight">
             {loadedLang === 'ne' ? metadata?.titleNe : metadata?.titleEn}
           </h1>
-          <div className="flex flex-col gap-1 font-lora">
-            <p className="text-stone-600 text-xl italic">By {metadata?.author}</p>
-            <p className="text-stone-400 text-sm tracking-wide uppercase">{metadata?.designation}</p>
-          </div>
+          <p className="font-lora italic text-stone-600 text-lg">By {metadata?.author}</p>
+          <p className="text-stone-400 text-sm mt-1 uppercase tracking-wide">{metadata?.designation}</p>
 
           {/* Newari Invitation */}
-          {hasNewari && loadedLang !== 'new' && (
-            <div className="mt-12 p-8 bg-stone-50 border border-stone-200 rounded-lg flex flex-col md:flex-row items-center justify-between gap-6 shadow-sm">
-              <div className="text-stone-700 text-sm font-lora leading-relaxed">
+          {availableLanguages.includes('new') && loadedLang !== 'new' && (
+            <div className="mt-10 p-6 bg-stone-50 border border-stone-200 rounded-lg flex flex-col md:flex-row items-center justify-between gap-6 shadow-sm">
+              <div className="text-stone-700 text-sm font-lora">
                 <p className="italic mb-1 opacity-60">यो लेख मूलतः नेपाल भाषामा लेखिएको हो ।</p>
-                <p className="font-bold text-stone-900 text-base">Nepal Bhasa (Newari) version is available.</p>
+                <p className="font-bold text-stone-900">Nepal Bhasa version is available.</p>
               </div>
-              <button 
-                onClick={() => handleLanguageChange('new')} 
-                className="bg-[#2D2D2D] text-white px-6 py-3 rounded text-[11px] font-black tracking-[0.2em] uppercase hover:bg-black transition-all shadow-md"
-              >
+              <button onClick={() => handleLanguageChange('new')} className="bg-[#2D2D2D] text-white px-5 py-2.5 rounded text-[10px] font-black tracking-widest uppercase hover:bg-black transition-all">
                 (READ ORIGINAL)
               </button>
             </div>
           )}
-
-          {/* Newari Version Return Buttons */}
-          {loadedLang === 'new' && (
-            <div className="mt-10 flex gap-8">
-              <button onClick={() => handleLanguageChange('en')} className="text-[11px] font-black tracking-widest text-stone-400 hover:text-stone-900 transition-colors uppercase underline underline-offset-[12px] decoration-stone-200 hover:decoration-stone-900">English Version</button>
-              <button onClick={() => handleLanguageChange('ne')} className="text-[11px] font-black tracking-widest text-stone-400 hover:text-stone-900 transition-colors uppercase underline underline-offset-[12px] decoration-stone-200 hover:decoration-stone-900">नेपाली संस्करण</button>
-            </div>
-          )}
         </header>
         
-        {/* ENHANCED READABILITY CLASSES */}
-        <div className={`
-          markdown-content 
-          prose prose-stone 
-          max-w-none 
-          text-[1.2rem] 
-          leading-[2] 
-          tracking-normal
-          text-stone-800
-          ${loadedLang === 'new' || loadedLang === 'ne' ? 'font-noto' : 'font-lora'}
-          prose-p:mb-10 
-          prose-headings:mt-16 
-          prose-headings:mb-8
-          prose-strong:text-stone-900
-          prose-blockquote:border-l-4
-          prose-blockquote:border-stone-200
-          prose-blockquote:italic
-          prose-blockquote:text-stone-600
-        `}>
+        {/* Article Body */}
+        <div className={`markdown-content prose prose-stone max-w-none text-[1.2rem] leading-[2] ${loadedLang === 'new' || loadedLang === 'ne' ? 'font-noto' : 'font-lora'} prose-p:mb-10`}>
           <ReactMarkdown remarkPlugins={[remarkGfm]}>{content}</ReactMarkdown>
+        </div>
+
+        {/* --- Table of Contents Footer --- */}
+        <div className="mt-32 pt-20 border-t-2 border-stone-200">
+          <div className="flex items-center justify-center mb-16">
+            <div className="h-[1px] w-12 bg-stone-300" />
+            <span className="mx-6 text-stone-500 text-2xl font-black font-playfair tracking-[0.2em] uppercase">
+              {language === 'ne' ? 'लेख सूची' : 'Contents'}
+            </span>
+            <div className="h-[1px] w-12 bg-stone-300" />
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {articles.filter(a => a.slug !== slug).map((article) => (
+              <Link key={article.slug} href={`/archive/${article.slug}`} 
+                className="group bg-white rounded-xl p-8 border border-stone-200 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300"
+              >
+                <div className="text-blue-600 text-[10px] mb-3 font-lora uppercase tracking-[0.2em] opacity-40 group-hover:opacity-100">
+                  {getAltTitle(article)}
+                </div>
+                <h3 className="font-playfair text-xl font-bold mb-4 text-[#2D2D2D] group-hover:text-stone-600 leading-tight">
+                  {getTitle(article)}
+                </h3>
+                <div className="font-lora text-xs font-bold text-stone-800">{article.author}</div>
+              </Link>
+            ))}
+          </div>
+          
+          <div className="mt-16 text-center">
+            <Link href="/" className="inline-block font-lora text-stone-400 hover:text-stone-900 transition-colors border-b border-stone-200 pb-1">
+              ← {language === 'ne' ? 'गृहपृष्ठमा फर्कनुहोस्' : 'Return to Home'}
+            </Link>
+          </div>
         </div>
       </article>
     </div>
