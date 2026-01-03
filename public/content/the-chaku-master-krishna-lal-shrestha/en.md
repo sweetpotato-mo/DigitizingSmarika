@@ -1,0 +1,22 @@
+# The Chaku Master: Krishna Lal Shrestha
+
+
+Krishna Lal Shrestha was born in 1959 (2016 BS) in the Deayakwo Tol of Tokha as the youngest child of Basalaxmi Shrestha. Born into a middle-class farming family, he grew up with three brothers and two sisters.
+
+His grandfather, Astaman Shrestha, and his father, Astanarayan Shrestha, were traditional farmers who produced and sold Chaku during the months of Mangsir and Poush. The Chaku business is his ancestral trade, and Krishna Lal has established himself as a prominent figure in the industry. He officially began his journey in traditional Chaku production in 1979 (2036 BS).
+
+His early education began at Chandeshwori Primary School, where he consistently ranked first in his class. However, his formal schooling ended after the fifth grade. As a student, he was remarkably self-reliant; he used to play marbles with his friends and sell his winnings to afford pens and notebooks. Coming from a large, middle-class family facing financial hardships, his parents were unable to provide educational materials. In fact, due to the family's economic situation, none of his older brothers or sisters were able to attend school at all.
+
+At the age of 20, he married Gyani Shrestha, with whom he had one son and one daughter. Their journey together lasted for nearly 47 years until her passing on September 9, 2016 (Bhadra 25, 2073 BS). Gyani had stood by him through every hardship, and her death at a time when the family had finally achieved comfort left him deeply devastated. "She was my shield and my companion during my days of poverty and struggle. Just as the days of happiness began, she left me forever," he recounts with a voice heavy with sorrow.
+
+Around 1979, a day before the Indra Jatra festival, his family decided to separate their households. Following the split, he worked as a grain trader (*Phau Banja*) to support his family. He would collect paddy, have it milled, and distribute the rice across various locations in Kathmandu. He also worked briefly as a mason alongside friends and eventually transitioned into contracting. He spent approximately 20 years working as a building contractor.
+
+Krishna Lal has been politically active since the Panchayat era. A dedicated member of the Nepali Congress, he was elected unopposed as the Chairperson of the Nepal Youth Organization’s initial committee for the Tokha Saraswati Village Panchayat in 1982. Under his leadership, significant local infrastructure projects were completed, including the construction of a drainage system in Deayakwo and the repair of the *Bakhya Hiti* (stone spout). He also contributed to the cultural sector through his involvement with the *Taymay Khalah*.
+
+He vividly remembers the hardships of 1990 (2047 BS) while making Chaku at a rented property in Prajapati Tol, Thamel. At that time, he could never have imagined reaching his current level of success. He once narrowly escaped a life-threatening accident due to a worker's negligence. "We were supposed to put two buckets of jaggery into the large boiling vat (*phosi*), but the worker put in three and stoked the fire intensely," he recalls. "The jaggery boiled over into the stove, causing a massive flare-up. The landlord, Maila Sahu, had to throw nearly ten buckets of water to extinguish the fire."
+
+A similar accident occurred in 1999 (2056 BS) at the nearby house of Satu Prajapati. At that time, Chaku was produced in two small rooms. There was a small stone-paved courtyard where tarpaulins were spread at night to cool the Chaku. In the mornings, salesmen would pack the cooled Chaku into their *Kharpans* (shoulder-pole baskets) and head out for sales.
+
+In those days, workers lived on simple meals of coarse rice and local vegetables. Despite the meager food, they worked with great vigor and enthusiasm. Today, the lifestyle of workers has changed; they expect fine *Jira Masino* rice, pickles, and meat (chicken or buffalo) every few days. Local workers from Tokha are often reluctant to engage in the labor or live on-site, forcing owners to hire workers from outside the district to keep the business running.
+
+Krishna Lal began Chaku production in 1979 and opened a grocery store in 1995 (2052 BS), where he also sold traditional Nepali and Indian sweets. Today, the business he started is managed by his son, Krishna Bahadur Shrestha, and daughter-in-law, Santamaya Shrestha. Even now, he continues to assist in the trade and production whenever possible.

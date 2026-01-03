@@ -28,6 +28,24 @@
     "languageAvailability": ["ne", "en"]
   },
   {
+    "slug": "the-chaku-master-krishna-lal-shrestha",
+    "titleEn": "The Chaku Master: Krishna Lal Shrestha",
+    "titleNe": "चाकु साहु: कृष्णलाल श्रेष्ठ",
+    "author": "Sagar Raj Lawat",
+    "designation": "Correspondent, TokhaTimes.com",
+    "tags": [
+      "History",
+      "Legacy",
+      "Biography",
+      "Tradition",
+      "Trade History"
+    ],
+    "languageAvailability": [
+      "en",
+      "ne"
+    ]
+  },
+  {
     "slug": "they-snatch-and-eat-it",
     "titleEn": "They Say It's Not Good, Yet They Snatch It and Eat It",
     "titleNe": "मिठो छैन भन्छन् तर खोसेर खाइदिन्छन्",
